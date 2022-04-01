@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.ui.comp.valuehelpdialog"
+    xmlns:core="sap.ui.core">
+    <ValueHelpDialog title="Games"
+        ok=".onValueHelpOkPress"
+        cancel=".onValueHelpCancelPress"
+        afterClose=".onValueHelpAfterClose"
+        tokenDisplayBehaviour="descriptionOnly"
+        key="Id"
+        descriptionKey="Name">
+    </ValueHelpDialog>
+</core:FragmentDefinition>

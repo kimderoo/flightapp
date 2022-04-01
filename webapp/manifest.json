@@ -19,6 +19,15 @@
                     "localUri": "localService/metadata.xml",
                     "odataVersion": "2.0"
                 }
+            },
+            "GameService": {
+                "uri": "/sap/opu/odata/sap/ZC_TCHR_GAMES_SH_CDS/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
             }
         }
     },
@@ -39,7 +48,7 @@
         }
     },
     "sap.ui5": {
-        "flexEnabled": true,
+        "flexEnabled": false,
         "dependencies": {
             "minUI5Version": "1.99.0",
             "libs": {
@@ -66,6 +75,13 @@
             },
             "": {
                 "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "useBatch": false
+                }
+            },
+            "game": {
+                "dataSource": "GameService",
                 "preload": true,
                 "settings": {
                     "useBatch": false

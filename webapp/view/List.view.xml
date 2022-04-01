@@ -44,6 +44,9 @@
                 visible="true"
                 press="handleSavePress"/>
         </f:SimpleForm>
+			<OverflowToolbar id="_IDGenOverflowToolbar1">
+				<SearchField id="_IDGenSearchField1" liveChange=".onSearch" width="100%" />
+			</OverflowToolbar>
         <Table id="table"
             headerText="Products"
             items="{/flightSet}">

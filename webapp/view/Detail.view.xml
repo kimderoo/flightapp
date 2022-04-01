@@ -35,6 +35,10 @@
                                     description="{Planetype}" />
                             </items>
                         </List>
+                        <MultiInput id="multiInput"
+                            valueHelpOnly="true"
+                            valueHelpRequest=".onValueHelpRequested">
+                        </MultiInput>
                     </content>
                 </IconTabFilter>
                 <IconTabFilter text="Price Info"
