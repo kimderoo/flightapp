@@ -1,0 +1,89 @@
+<mvc:View controllerName="hogent.com.flightoverview.controller.List"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout">
+    <Page id="page"
+        title="{i18n>title}">
+        <f:SimpleForm id="SimpleForm"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            title="Address"
+            labelSpanXL="3"
+            labelSpanL="3"
+            labelSpanM="3"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="4"
+            emptySpanL="4"
+            emptySpanM="4"
+            emptySpanS="0"
+            columnsXL="1"
+            columnsL="1"
+            columnsM="1"
+            singleContainerFullSize="false">
+            <f:content>
+                <Label id="airlineLabel"
+                    text="Airline" />
+                <Input id="airlineValue"
+                    value="{local>/Carrid}" />
+                <Label id="flightNrLabel"
+                    text="Flight Number" />
+                <Input id="flightNrValue"
+                    value="{local>/Connid}" />
+                <Label id="dateLabel"
+                    text="Flight Date" />
+                <DatePicker id="dateValue"
+                    value="{local>/Fldate}" />
+            </f:content>
+            <Button id="save"
+                text="Save"
+                type="Emphasized"
+                visible="true"
+                press="handleSavePress"/>
+        </f:SimpleForm>
+        <Table id="table"
+            headerText="Products"
+            items="{/flightSet}">
+            <columns>
+                <Column id="column1">
+                    <header>
+                        <Text id="header1"
+                            text="Airline" />
+                    </header>
+                </Column>
+                <Column id="column2">
+                    <header>
+                        <Text id="header2"
+                            text="Flight Number" />
+                    </header>
+                </Column>
+                <Column id="_IDGenColumn1"
+                    mergeDuplicates="true">
+                    <header>
+                        <Text id="_IDGenText1"
+                            text="Date" />
+                    </header>
+                </Column>
+            </columns>
+            <ColumnListItem id="columnlistitem"
+                vAlign="Middle"
+                type="Navigation"
+                press="handleListItemPress">
+                <Text id="carrid"
+                    text="{Carrid}" />
+                <ObjectIdentifier id="connid"
+                    title="{Connid}"/>
+                <Text id="_IDGenText2"
+                    text="{path: 'Fldate',
+				        type: 'sap.ui.model.type.Date',
+				        formatOptions: {
+                            style: 'medium'
+                        }
+                        }" />
+            </ColumnListItem>
+        </Table>
+    </Page>
+</mvc:View>
